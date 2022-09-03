@@ -1,4 +1,4 @@
-﻿<Window xmlns:Controls="clr-namespace:BluriSVG.Control.View.Controls;assembly=BluriSVG.Control"  
+﻿<Window xmlns:svg="clr-namespace:BluriSVG.Control.View.Controls;assembly=BluriSVG.Control"  
         x:Class="BluriSVG.TestApplication.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -8,16 +8,16 @@
         mc:Ignorable="d" Background="#1e1e1e"
         Title="MainWindow" Height="450" Width="800">
     <StackPanel>
-        <Controls:Svg Width="50" Height="50" Background="Orange"
+        <svg:Svg Width="50" Height="50" Background="Orange"
                       PathSvg="C:\Users\Maks\Downloads\banana-bananas-bunch-svgrepo-com.svg"
                       Resize="1,1" Fill="Red" />
-        <Controls:Svg Width="50" Height="50" Background="Orange"
+        <svg:Svg Width="50" Height="50" Background="Orange"
                       PathSvg="C:\Users\Maks\Downloads\banana-bananas-bunch-svgrepo-com.svg"
                       Resize="1,1" Fill="Green" />
-        <Controls:Svg Width="50" Height="50" Background="Orange"
+        <svg:Svg Width="50" Height="50" Background="Orange"
                       PathSvg="C:\Users\Maks\Downloads\banana-bananas-bunch-svgrepo-com.svg"
                       Resize="1,1" Fill="Blue" />
-        <Controls:Svg Width="50" Height="50" Background="Orange"
+        <svg:Svg Width="50" Height="50" Background="Orange"
                       PathSvg="C:\Users\Maks\Downloads\20ec14b1be6ee8760a40687db70c7406_auto_x2 (1).svg"
                       Resize="0.4,0.4" Fill="White" />
     </StackPanel>
