@@ -1,0 +1,14 @@
+﻿<Window xmlns:Controls="clr-namespace:BluriSVG.Control.View.Controls;assembly=BluriSVG.Control"  x:Class="BluriSVG.TestApplication.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BluriSVG.TestApplication"
+        mc:Ignorable="d" Background="#1e1e1e"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Controls:Svg x:Name="svg_" 
+                      PathSvg="C:\Users\Maks\Downloads\20ec14b1be6ee8760a40687db70c7406_auto_x2 (1).svg" 
+                      Resize="1.0,1" />
+    </Grid>
+</Window>

@@ -11,17 +11,15 @@
 
 
         <ItemsControl x:Name="ic" ItemsSource="{Binding DataList}" >
-            <ItemsControl.Effect>
-                <BlurEffect Radius="10"/>
-            </ItemsControl.Effect>
+           
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
                     <Canvas/>
                 </ItemsPanelTemplate>
             </ItemsControl.ItemsPanel>
             <ItemsControl.ItemTemplate>
-                <DataTemplate>
-                    <Path Fill="Red" Data="{Binding}"/>
+                <DataTemplate> 
+                    <Path Fill="White" Data="{Binding}"/>
 
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
