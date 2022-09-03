@@ -67,26 +67,39 @@ namespace BluriSVG.Control.View.Controls
             set
             {
                 _path_svg = value;
-                if (File.Exists(_path_svg))
+                string location = new FileInfo(System.Reflection.Assembly.GetExecutingAssembly().Location).DirectoryName;
+                string local_path_svg = System.IO.Path.Combine(location, _path_svg);
+                if (!File.Exists(_path_svg))
                 {
-                    string data_ = File.ReadAllText(_path_svg);
-                    DataList.Clear();
-                    foreach (Match _svg in Regex.Matches(data_ , "<svg[\\w\\W]+?<\\/svg>"))
+                    if (!File.Exists(local_path_svg))
                     {
-                        foreach (Match item in Regex.Matches(_svg.Value, "<path[\\w\\W]+?\\/>"))
+                        return;
+                    }
+                    else
+                    {
+                        _path_svg = local_path_svg;
+                    }
+                }
+                
+                
+                string data_ = File.ReadAllText(_path_svg);
+                DataList.Clear();
+                foreach (Match _svg in Regex.Matches(data_ , "<svg[\\w\\W]+?<\\/svg>"))
+                {
+                    foreach (Match item in Regex.Matches(_svg.Value, "<path[\\w\\W]+?\\/>"))
+                    {
+
+                        foreach (Match _d in Regex.Matches(item.Value, "d=\\\"[\\w\\W]+?\\\""))
                         {
 
-                            foreach (Match _d in Regex.Matches(item.Value, "d=\\\"[\\w\\W]+?\\\""))
-                            {
 
 
-
-                                this.Add(Regex.Replace(_d.Value, "(d=\")|(\")", ""), Fill);
-                            }
+                            this.Add(Regex.Replace(_d.Value, "(d=\")|(\")", ""), Fill);
                         }
                     }
-
                 }
+
+                
             }
         }
         private Brush _Fill = Brushes.White;
