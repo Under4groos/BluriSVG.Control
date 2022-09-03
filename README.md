@@ -1,6 +1,6 @@
 # images
 
-<img src="https://img.youtube.com/vi/FiJCrrW4FiE/default.jpg" width="400"> 
+<img src="https://i.imgur.com/74rsajb.png" width="200"> 
  
 http://www.youtube.com/watch?feature=player_embedded&v=FiJCrrW4FiE
 # Using
