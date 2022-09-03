@@ -2,7 +2,10 @@
 # images
 
 <img src="https://i.imgur.com/flNXjpx.png" width="200">
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/FiJCrrW4FiE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/FiJCrrW4FiE/0.jpg)](https://www.youtube.com/watch?v=FiJCrrW4FiE)
+
 # Using
 ```html
 xmlns:svg="clr-namespace:BluriSVG.Control.View.Controls;assembly=BluriSVG.Control"  
