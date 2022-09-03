@@ -1,10 +1,8 @@
 # images
 
-<img src="https://img.youtube.com/vi/FiJCrrW4FiE/default.jpg" width="200"> 
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=FiJCrrW4FiE" target="_blank">
- <img src="http://img.youtube.com/vi/FiJCrrW4FiE/mqdefault.jpg" alt="Watch the video" width="240" height="180" border="10" />
-</a>
+<img src="https://img.youtube.com/vi/FiJCrrW4FiE/default.jpg" width="400"> 
  
+http://www.youtube.com/watch?feature=player_embedded&v=FiJCrrW4FiE
 # Using
 ```html 
 xmlns:svg="clr-namespace:BluriSVG.Control.View.Controls;assembly=BluriSVG.Control" 
