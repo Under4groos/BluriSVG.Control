@@ -6,9 +6,18 @@
         xmlns:local="clr-namespace:BluriSVG.TestApplication"
         mc:Ignorable="d" Background="#1e1e1e"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <Controls:Svg x:Name="svg_" 
-                      PathSvg="C:\Users\Maks\Downloads\20ec14b1be6ee8760a40687db70c7406_auto_x2 (1).svg" 
-                      Resize="1.0,1" />
-    </Grid>
+    <StackPanel>
+        <Controls:Svg Width="50" Height="50" Background="Orange"
+                      PathSvg="C:\Users\Maks\Downloads\banana-bananas-bunch-svgrepo-com.svg"
+                      Resize="1,1" Fill="Red" />
+        <Controls:Svg Width="50" Height="50" Background="Orange"
+                      PathSvg="C:\Users\Maks\Downloads\banana-bananas-bunch-svgrepo-com.svg"
+                      Resize="1,1" Fill="Green" />
+        <Controls:Svg Width="50" Height="50" Background="Orange"
+                      PathSvg="C:\Users\Maks\Downloads\banana-bananas-bunch-svgrepo-com.svg"
+                      Resize="1,1" Fill="Blue" />
+        <Controls:Svg Width="50" Height="50" Background="Orange"
+                      PathSvg="C:\Users\Maks\Downloads\20ec14b1be6ee8760a40687db70c7406_auto_x2 (1).svg"
+                      Resize="0.4,0.4" Fill="White" />
+    </StackPanel>
 </Window>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BluriSVG.Control.Model;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -20,17 +21,16 @@ using System.Windows.Shapes;
 
 namespace BluriSVG.Control.View.Controls
 {
-    /// <summary>
-    /// Логика взаимодействия для Svg.xaml
-    /// </summary>
+   
+
     public partial class Svg : UserControl , INotifyPropertyChanged
     {
 
         public event PropertyChangedEventHandler PropertyChanged;
-        private ObservableCollection<string> DataList_ = new ObservableCollection<string>();
+        private ObservableCollection<SvgData> DataList_ = new ObservableCollection<SvgData>();
 
 
-        public ObservableCollection<string> DataList
+        public ObservableCollection<SvgData> DataList
         {
             get
             {
@@ -58,8 +58,6 @@ namespace BluriSVG.Control.View.Controls
             }
         }
         private string _path_svg = "";
-
-
         public string PathSvg
         {
             get
@@ -81,8 +79,9 @@ namespace BluriSVG.Control.View.Controls
                             foreach (Match _d in Regex.Matches(item.Value, "d=\\\"[\\w\\W]+?\\\""))
                             {
 
-                                DataList.Add(Regex.Replace(_d.Value, "(d=\")|(\")", ""));
-                               // Console.WriteLine(Regex.Replace(_d.Value, "(d=\")|(\")", ""));
+
+
+                                this.Add(Regex.Replace(_d.Value, "(d=\")|(\")", ""), Fill);
                             }
                         }
                     }
@@ -90,7 +89,33 @@ namespace BluriSVG.Control.View.Controls
                 }
             }
         }
+        private Brush _Fill = Brushes.White;
+        public Brush Fill
+        {
+            get
+            {
+                return _Fill;
+            }
+            set
+            {
+                _Fill = value;
+                PathSvg = PathSvg;
+            }
+        }
+        public void Add(string str_ , Brush brush)
+        {
+            this.DataList.Add( new SvgData()
+            {
+                Path = str_,
+                Fill = brush,
+            });
 
+        }
+        public void Add(string str_)
+        {
+            Add(str_, Fill);
+
+        }
         private void _resize(double w , double h)
         {
             ScaleTransform myScaleTransform = new ScaleTransform();
@@ -99,6 +124,9 @@ namespace BluriSVG.Control.View.Controls
             TransformGroup myTransformGroup = new TransformGroup();
             myTransformGroup.Children.Add(myScaleTransform);
             this.RenderTransform = myTransformGroup;
+
+
+          
         }
         public void OnPropertyChanged([CallerMemberName] string prop = "")
         {

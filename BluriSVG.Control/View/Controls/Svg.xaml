@@ -3,8 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:BluriSVG.Control.View.Controls" d:DataContext="{d:DesignInstance Type=local:Svg}"
+             xmlns:local="clr-namespace:BluriSVG.Control.View.Controls" 
+             d:DataContext="{d:DesignInstance Type=local:Svg}"
              mc:Ignorable="d" 
+             HorizontalAlignment="Left" VerticalAlignment="Top"
              >
     <Grid>
 
@@ -18,9 +20,9 @@
                 </ItemsPanelTemplate>
             </ItemsControl.ItemsPanel>
             <ItemsControl.ItemTemplate>
-                <DataTemplate> 
-                    <Path Fill="White" Data="{Binding}"/>
-
+                <DataTemplate>
+                    <Path Fill="{Binding Path=Fill}" Data="{Binding Path=Path}"/>
+                    
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
         </ItemsControl>
