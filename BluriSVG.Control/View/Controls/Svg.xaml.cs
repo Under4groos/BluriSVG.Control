@@ -30,6 +30,22 @@ namespace BluriSVG.Control.View.Controls
         private ObservableCollection<SvgData> DataList_ = new ObservableCollection<SvgData>();
 
 
+      
+        private void Svg_PropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+            switch (e.PropertyName)
+            {
+                case "svg_path":
+
+
+                    this.DataList.Clear();
+                    this.Add(DataPath);
+                    break;
+                default:
+                    break;
+            }
+        }
+
         public ObservableCollection<SvgData> DataList
         {
             get
@@ -56,7 +72,26 @@ namespace BluriSVG.Control.View.Controls
                 _Resize = value;
                 _resize(_Resize.Width, _Resize.Height);
             }
+        
         }
+
+        private string _path = "";
+
+        public string DataPath
+        {
+            get
+            {
+                return _path;
+            }
+
+            set
+            {
+                _path = value;
+                OnPropertyChanged("svg_path");
+            }
+
+        }
+
         private string _path_svg = "";
         public string PathSvg
         {
@@ -153,6 +188,8 @@ namespace BluriSVG.Control.View.Controls
         {
             InitializeComponent();
             this.DataContext = this;
+
+            this.PropertyChanged += Svg_PropertyChanged;
         }
     }
 }
