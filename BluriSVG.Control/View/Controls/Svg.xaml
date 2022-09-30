@@ -6,10 +6,10 @@
              xmlns:local="clr-namespace:BluriSVG.Control.View.Controls" 
              d:DataContext="{d:DesignInstance Type=local:Svg}"
              mc:Ignorable="d" 
-             HorizontalAlignment="Left" VerticalAlignment="Top"
+             
              >
     <Grid>
-
+        <Path x:Name="pat"></Path>
 
 
         <ItemsControl x:Name="ic" ItemsSource="{Binding DataList}" >
@@ -21,7 +21,9 @@
             </ItemsControl.ItemsPanel>
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
-                    <Path Fill="{Binding Path=Fill}" Data="{Binding Path=Path}"/>
+                    <Path Fill="{Binding Path=Fill}" Data="{Binding Path=Path}">
+                        
+                    </Path>
                     
                 </DataTemplate>
             </ItemsControl.ItemTemplate>

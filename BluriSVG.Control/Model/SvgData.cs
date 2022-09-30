@@ -17,5 +17,9 @@ namespace BluriSVG.Control.Model
         {
             get;set;
         }
+        public Geometry Geometry
+        {
+            get;set;
+        }
     }
 }
